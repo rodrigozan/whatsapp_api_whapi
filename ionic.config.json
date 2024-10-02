@@ -1,0 +1,7 @@
+{
+  "name": "whatsapp_api_whapi",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
