@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Blank
+      {{ title }}
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -9,12 +9,21 @@
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
+      <ion-title size="large">{{ title }}</ion-title>
     </ion-toolbar>
   </ion-header>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+  <ion-list>
+    <ion-item>
+      <ion-input labelPlacement="floating" label="Insira seu whatsapp" [(ngModel)]="number">
+        <div slot="label">Número <ion-text color="danger">(Required)</ion-text></div>
+      </ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input labelPlacement="floating" label="Qual a mensagem?" [(ngModel)]="message">
+        <div slot="label">Mensagem <ion-text color="danger">(Required)</ion-text></div>
+      </ion-input>
+    </ion-item>
+    <ion-button color="{{btnColor}}" expand="full" (click)="sendWhatsapp()">Enviar Whatsapp</ion-button>
+  </ion-list>
 </ion-content>
